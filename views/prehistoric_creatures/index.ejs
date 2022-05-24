@@ -1,0 +1,17 @@
+<% preCreaturesData.forEach((creature, index) => { %>
+<h1><%= creature.type %></h1>
+<img
+  src="<%= creature.img_url %>"
+  alt="<%= creature.type %>"
+  width="400"
+  height="auto"
+/>
+<a href="/prehistoric_creatures/edit/<%= index %>">Edit</a>
+
+<form
+  action="/prehistoric_creatures/<%= index %>/?_method=DELETE"
+  method="POST"
+>
+  <button type="submit">Delete</button>
+</form>
+<% }) %>
